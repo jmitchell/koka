@@ -1,0 +1,7 @@
+ghc: 8.0.2
+install:
+- apt-get install nodejs npm
+- ln -s /usr/bin/nodejs /usr/bin/node
+script:
+- npm install
+- jake test
