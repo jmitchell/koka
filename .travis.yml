@@ -1,7 +1,8 @@
+language: haskell
 ghc: 8.0.2
 sudo: required
 install:
 - sudo apt-get install nodejs npm
 script:
 - npm install
-- jake test
+- jake test variant=release
