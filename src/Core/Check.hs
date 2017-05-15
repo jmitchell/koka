@@ -22,7 +22,7 @@ import Common.Unique
 import Common.Error
 import Common.Range
 
-import Core.Core hiding (check)
+import Core.Core
 import qualified Core.Core as Core
 import qualified Core.Pretty as PrettyCore
 -- import Core.Cps( cpsType, typeK )
