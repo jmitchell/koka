@@ -2,7 +2,7 @@ ghc: 8.0.2
 sudo: required
 install:
 - sudo apt-get install nodejs npm
-- ln -s /usr/bin/nodejs /usr/bin/node
+- sudo ln -s /usr/bin/nodejs /usr/bin/node
 script:
 - npm install
 - jake test
