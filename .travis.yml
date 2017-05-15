@@ -5,4 +5,5 @@ install:
 - sudo apt-get install nodejs npm
 script:
 - npm install
+- cabal install alex parsec random text
 - jake test variant=release
