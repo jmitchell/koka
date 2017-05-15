@@ -1,6 +1,7 @@
 ghc: 8.0.2
+sudo: required
 install:
-- apt-get install nodejs npm
+- sudo apt-get install nodejs npm
 - ln -s /usr/bin/nodejs /usr/bin/node
 script:
 - npm install
