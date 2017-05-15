@@ -852,7 +852,11 @@ function runTests(test,testMode,flags,callback) {
     }
     // jake.logger.log("run " + (tests.length===1 ? "test" : tests.length + " tests over") + ": " + test);
     console.time(testMessage);
-    runTestList(tests.length,testMode,tests,flags,callback);      
+    runTestList(tests.length,testMode,tests,flags,function(failedCount) {
+      if (failedCount > 0) {
+        process.exit(1);
+      }
+    });
   })
 }
 
@@ -866,7 +870,7 @@ function runTestList(n,testMode,tests,flags,callback,nooutCount,failedCount) {
     jake.logger.log("tested     : " + (total - nooutCount));
     jake.logger.log("failed     : " + failedCount);
     console.timeEnd(testMessage);
-    if (callback) callback();
+    if (callback) callback(failedCount);
              else complete();
   }  
   else {
